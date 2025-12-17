@@ -79,6 +79,7 @@ namespace DataSender
             {
                 // Handle exceptions
                 Console.WriteLine($"Error sending data to OCI Streams: {ex.Message}");
+                throw;
             }
         }
         
