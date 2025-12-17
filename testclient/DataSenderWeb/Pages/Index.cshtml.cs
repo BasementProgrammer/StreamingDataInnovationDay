@@ -1,8 +1,19 @@
 using DataSender;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Server.Kestrel;
+using Oci.Common;
+using Oci.Common.Auth;
+using Oci.SecretsService.Models;
+using Oci.SecretsService.Requests;
+using Oci.VaultService.Models;
+using Oci.VaultService.Requests;
+using Oci.VaultService.Responses;
 using System.ComponentModel;
 using System.Reflection.Metadata;
+using System.Security.Cryptography;
+using System.Text;
+using static Org.BouncyCastle.Math.EC.ECCurve;
 
 namespace DataSenderWeb.Pages
 {
@@ -10,6 +21,7 @@ namespace DataSenderWeb.Pages
     {
         private readonly ILogger<IndexModel> _logger;
         private readonly IConfiguration _appConfig;
+        private readonly IBasicAuthenticationDetailsProvider _config;
 
         public IndexModel(ILogger<IndexModel> logger) : base()
         {
@@ -24,10 +36,64 @@ namespace DataSenderWeb.Pages
                 .Build();
             _appConfig = host.Services.GetRequiredService<IConfiguration>();
 
-            StreamId = _appConfig.GetValue<string>("StreamId");
-            ProfileName =_appConfig.GetValue<string>("ProfileName");
-            EndpointConfiguration = _appConfig.GetValue<string>("EndpointConfiguration");
+            
+            try
+            {
+                _config = new InstancePrincipalsAuthenticationDetailsProvider();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error initializing Instance Principals authentication: {ex.Message}");
+                // Fallback to config file authentication
+                _config = new ConfigFileAuthenticationDetailsProvider("DEFAULT");
+            }
 
+            string vaultId;
+            vaultId = Environment.GetEnvironmentVariable("VaultID");
+            if (string.IsNullOrEmpty(vaultId))
+            {
+                vaultId = "ocid1.vault.oc1.iad.ejuuftbaaagis.abuwcljr3ae2k77jevj2hya26c3v52rtsoo6hrck7kqkj777gdtpkqzzeziq";
+            }
+
+            StreamId = populateConfigFromVault("StreamId", vaultId);
+            EndpointConfiguration = populateConfigFromVault("EndpointConfiguration", vaultId);
+        }
+
+        private string populateConfigFromVault(string secretName, string vaultId)
+        {
+            var client = new Oci.SecretsService.SecretsClient(_config);
+            var vaultClient = new Oci.VaultService.VaultsClient(_config);
+
+
+            var getSecretBundleByNameRequest = new GetSecretBundleByNameRequest
+            {
+                SecretName = secretName,
+                VaultId = vaultId,
+            };
+
+            var secretResponce = client.GetSecretBundleByName(getSecretBundleByNameRequest).Result;
+            var secretBundle = secretResponce.SecretBundle;
+            Base64SecretBundleContentDetails secretBundleContent = (Base64SecretBundleContentDetails)secretBundle.SecretBundleContent;
+            var content = secretBundleContent.Content;
+            var decodedBytes = Convert.FromBase64String(content);
+
+            return Encoding.UTF8.GetString(decodedBytes);
+        }
+
+        private string populateConfigFromVault(string value)
+        {
+            var client = new Oci.SecretsService.SecretsClient(_config);
+            GetSecretBundleRequest getSecretBundleRequest = new GetSecretBundleRequest
+            {
+                SecretId = value
+            };
+            var secretResponce = client.GetSecretBundle(getSecretBundleRequest).Result;
+            var secretBundle = secretResponce.SecretBundle;
+            Base64SecretBundleContentDetails secretBundleContent = (Base64SecretBundleContentDetails)secretBundle.SecretBundleContent;
+            var content = secretBundleContent.Content;
+            var decodedBytes = Convert.FromBase64String(content);
+
+            return Encoding.UTF8.GetString(decodedBytes);
         }
 
         public string StreamId { get; set; }
