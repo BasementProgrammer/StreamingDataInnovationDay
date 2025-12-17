@@ -39,7 +39,7 @@ namespace DataSenderWeb.Pages
             
             try
             {
-                _config = new InstancePrincipalsAuthenticationDetailsProvider();
+                _config = ResourcePrincipalAuthenticationDetailsProvider.GetProvider();
             }
             catch (Exception ex)
             {

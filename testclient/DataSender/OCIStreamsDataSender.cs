@@ -19,10 +19,9 @@ namespace DataSender
         {
             // Initialize OCI Streams client
             _streamConfig = streamConfig;
-            //_config = new ConfigFileAuthenticationDetailsProvider(_streamConfig.ProfileName);
             try
             {
-                _config = new InstancePrincipalsAuthenticationDetailsProvider();
+                _config = ResourcePrincipalAuthenticationDetailsProvider.GetProvider();
             }
             catch (Exception ex)
             {
