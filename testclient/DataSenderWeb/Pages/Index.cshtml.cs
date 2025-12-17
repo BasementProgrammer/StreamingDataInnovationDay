@@ -24,7 +24,6 @@ namespace DataSenderWeb.Pages
                 .Build();
             _appConfig = host.Services.GetRequiredService<IConfiguration>();
 
-            
             StreamId = _appConfig.GetValue<string>("StreamId");
             ProfileName =_appConfig.GetValue<string>("ProfileName");
             EndpointConfiguration = _appConfig.GetValue<string>("EndpointConfiguration");
