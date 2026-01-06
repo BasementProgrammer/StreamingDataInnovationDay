@@ -6,9 +6,9 @@ applications:
       preBuild:
         commands:
           # Install the specific Hugo version you need (e.g., v0.120.0)
-          - wget -O /tmp/hugo.tar.gz github.com
-          - tar -C /usr/bin/ -xvzf /tmp/hugo.tar.gz hugo
-          - chmod +x /usr/bin/hugo
+          #- wget -O /tmp/hugo.tar.gz github.com
+          #- tar -C /usr/bin/ -xvzf /tmp/hugo.tar.gz hugo
+          #- chmod +x /usr/bin/hugo
       build:
         commands:
           - hugo
