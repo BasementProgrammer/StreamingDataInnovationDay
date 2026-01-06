@@ -6,4 +6,4 @@ In today's session you are going to beuild out a working streaming data solition
 
 ![overview](/images/overview.png)
 
-Update
+
