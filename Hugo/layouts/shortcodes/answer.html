@@ -1,0 +1,25 @@
+{{ $_hugo_config := `{ "version": 1 }` }}
+<div class="expand" style="background-color:#CC5500; border:2px solid #8A3600; padding:6px; border-radius:4px;">
+    <div class="expand-label" 
+         style="cursor: pointer;" 
+         onclick="$h = $(this);$h.next('div').slideToggle(100,function () {
+             $h.children('i').attr('class', function () {
+                 return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';
+             });
+         });">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        {{$expandMessage := "Walkthrough: Click to expand"}}
+        {{ if .IsNamedParams }}
+            {{ .Get "default" | default $expandMessage }}
+        {{ else }}
+            {{ .Get 0 | default $expandMessage }}
+        {{ end }}
+        </span>
+    </div>
+
+    <div class="expand-content" 
+         style="display:none; background-color:#FFB07C; padding:8px; border-radius:4px; margin-top:6px;">
+        {{ .Inner | safeHTML }}
+    </div>
+</div>
