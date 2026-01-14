@@ -12,22 +12,22 @@
     <title>Part 1 :: Streaming Data Innovation Day</title>
 
     
-    <link href="/css/nucleus.css?1768409988" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1768409988" rel="stylesheet">
-    <link href="/css/hybrid.css?1768409988" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1768409988" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1768409988" rel="stylesheet">
-    <link href="/css/auto-complete.css?1768409988" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1768409988" rel="stylesheet">
-    <link href="/css/theme.css?1768409988" rel="stylesheet">
-    <link href="/css/tabs.css?1768409988" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1768409988" rel="stylesheet">
+    <link href="/css/nucleus.css?1768418470" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1768418470" rel="stylesheet">
+    <link href="/css/hybrid.css?1768418470" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1768418470" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1768418470" rel="stylesheet">
+    <link href="/css/auto-complete.css?1768418470" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1768418470" rel="stylesheet">
+    <link href="/css/theme.css?1768418470" rel="stylesheet">
+    <link href="/css/tabs.css?1768418470" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1768418470" rel="stylesheet">
     
-    <link href="/css/theme-oracle.css?1768409988" rel="stylesheet">
+    <link href="/css/theme-oracle.css?1768418470" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1768409988"></script>
+    <script src="/js/jquery-3.3.1.min.js?1768418470"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1768409988"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1768409988"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1768418470"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1768418470"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1768409988"></script>
+<script type="text/javascript" src="/js/search.js?1768418470"></script>
 
     
   </div>
@@ -125,6 +125,37 @@
       </a>
       
       
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/01-part1/010-streams/" title="Streams" class="dd-item ">
+        <a href="/01-part1/010-streams/">
+        Streams
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
     </li>
   
  
@@ -138,13 +169,13 @@
  
   
     
-    <li data-nav-id="/02-part2/" title="02 Part2" class="dd-item
+    <li data-nav-id="/02-part2/" title="Part 2" class="dd-item
         
         
         
         ">
       <a href="/02-part2/">
-          <b>X. </b>02 Part2
+          <b>2. </b>Part 2
           
       </a>
       
@@ -221,10 +252,18 @@
 
 
 
-	<h3 id="chapter-1">Chapter 1</h3>
-<h1 id="connecting-the-database">Connecting the database</h1>
-<p>In this section we will start off by exploring the resources that have been pre-created in your account, and do some initial set up. Our goal for this section is to set up the Autonomoud database, preload a table with data, and connect the streaming data client to your database by way of Oracle Streams. Once this has been completed, your solution will look like this:</p>
-<p><img src="/images/part1.png" alt="overview"></p>
+	<h1 id="chapter-1">Chapter 1</h1>
+<h2 id="learning-about-oci">Learning about OCI</h2>
+<p>The first part of this section will be an information session presented by your hosts. Learn about the services used, and the activities you will perform. Some of the activities that you will be completing in this sections are:</p>
+<h2 id="activities-in-this-section">Activities in this section</h2>
+<h3 id="streaming-data">Streaming Data</h3>
+<p>In this section you will connect an external source of data to OCI streams. Streams provides a durrable managed path for streaming data to travel thropugh OCI to other services.</p>
+<h3 id="configuring-oracle-autonomous-database">Configuring Oracle Autonomous Database</h3>
+<p>In this section you will take an Oracle Autonomous AI Database that has been created in your account and pre-load data into the database. You will use Oracle import tools to create the tables and import the data.</p>
+<h3 id="oci-functions">OCI Functions</h3>
+<p>In this section you will create and configure an OCI function to receive data streaming in from and points and insert the data into your Oracle Autonomous Database.</p>
+<h3 id="test-streaming-data">Test Streaming Data</h3>
+<p>Your accout comes pre-configured with a streaming data client that can be used to simulate data coming in from multiple data sources. We will arap up the first section by using the data generated from the test client and validating that it successfully arives in your database.</p>
 
 
 
@@ -295,9 +334,6 @@
                     
 
                     
-            
-        
-                    
                         
             
             
@@ -305,6 +341,25 @@
                     
                         
                         
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -329,7 +384,7 @@
 			<a class="nav nav-prev" href="/00-gettingstarted/" title="Getting Started"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/02-part2/" title="02 Part2" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/01-part1/010-streams/" title="Streams" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -339,19 +394,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1768409988"></script>
-    <script src="/js/perfect-scrollbar.min.js?1768409988"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1768409988"></script>
-    <script src="/js/jquery.sticky.js?1768409988"></script>
-    <script src="/js/featherlight.min.js?1768409988"></script>
-    <script src="/js/highlight.pack.js?1768409988"></script>
+    <script src="/js/clipboard.min.js?1768418470"></script>
+    <script src="/js/perfect-scrollbar.min.js?1768418470"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1768418470"></script>
+    <script src="/js/jquery.sticky.js?1768418470"></script>
+    <script src="/js/featherlight.min.js?1768418470"></script>
+    <script src="/js/highlight.pack.js?1768418470"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1768409988"></script>
-    <script src="/js/learn.js?1768409988"></script>
-    <script src="/js/hugo-learn.js?1768409988"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1768418470"></script>
+    <script src="/js/learn.js?1768418470"></script>
+    <script src="/js/hugo-learn.js?1768418470"></script>
     
         
-            <script src="/mermaid/mermaid.js?1768409988"></script>
+            <script src="/mermaid/mermaid.js?1768418470"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

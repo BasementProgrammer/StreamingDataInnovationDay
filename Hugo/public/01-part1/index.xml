@@ -6,7 +6,14 @@
     <description>Recent content in Part 1 on Streaming Data Innovation Day</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate></lastBuildDate>
+    <lastBuildDate>Wed, 14 Jan 2026 13:37:43 -0500</lastBuildDate>
     <atom:link href="http://localhost:1313/01-part1/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Streams</title>
+      <link>http://localhost:1313/01-part1/010-streams/</link>
+      <pubDate>Wed, 14 Jan 2026 13:37:43 -0500</pubDate>
+      <guid>http://localhost:1313/01-part1/010-streams/</guid>
+      <description>&lt;p&gt;Your account has been preconfigured with two OCI streams. These streams provide durable storage for streaming data waiting to be handled by other services. The first thing that we will do is use the OCI Connector service to connect the two streams. Connecting the two streams will provide us with a point for furure expansion when we leverage the AI capeabilities of Oracle Autonomous Database to automatically determine if records represent anomolous data or not.&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>

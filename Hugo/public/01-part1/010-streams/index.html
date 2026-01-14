@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Getting Started :: Streaming Data Innovation Day</title>
+    <title>Streams :: Streaming Data Innovation Day</title>
 
     
     <link href="/css/nucleus.css?1768418470" rel="stylesheet">
@@ -37,7 +37,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/00-gettingstarted/">
+  <body class="" data-url="/01-part1/010-streams/">
     <nav id="sidebar" class="">
 
 
@@ -92,7 +92,7 @@
     
     <li data-nav-id="/00-gettingstarted/" title="Getting Started" class="dd-item
         
-        active
+        
         
         ">
       <a href="/00-gettingstarted/">
@@ -115,7 +115,7 @@
   
     
     <li data-nav-id="/01-part1/" title="Part 1" class="dd-item
-        
+        parent
         
         
         ">
@@ -141,7 +141,7 @@
  
   
     
-      <li data-nav-id="/01-part1/010-streams/" title="Streams" class="dd-item ">
+      <li data-nav-id="/01-part1/010-streams/" title="Streams" class="dd-item active">
         <a href="/01-part1/010-streams/">
         Streams
         
@@ -217,6 +217,8 @@
                         </a>
                     </span>
                   
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
                   <span class="links">
                  
                  
@@ -227,7 +229,13 @@
             
           
           
-            <a href='/'></a> > Getting Started
+            
+            
+          
+          
+            <a href='/'></a> > <a href='/01-part1/'>Part 1</a> > Streams
+          
+        
           
         
           
@@ -236,6 +244,13 @@
                   </span>
                 </div>
                 
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents"></nav>
+    </div>
+</div>
+
+                
               </div>
             </div>
             
@@ -243,71 +258,20 @@
         
         </div>
         
-          <div id="chapter">
-        
         <div id="body-inner">
+          
+            <h1>
+              
+              Streams
+            </h1>
           
 
         
 
 
-
-	<h1 id="getting-started">Getting started</h1>
-<h2 id="conventions">Conventions</h2>
-<p>Throught this session you will encounter activities. The main body of the materials will guide you through what needs to be accomplished in each section. We have left the instructions open ended so that you can learn about OCI as you go. If you get stuck allong th way there will be green hint sections and organge Walkthrough sections. The hint sections will give you directional pointers to help you along your way. If you get stuck the walkthrough sections will provide step by step instructions.</p>
-
-<div class="expand" style="background-color:#d4f8d4; border:2px solid #0b5e0b; padding:6px; border-radius:4px;">
-    <div class="expand-label" 
-         style="cursor: pointer;" 
-         onclick="$h = $(this);$h.next('div').slideToggle(100,function () {
-             $h.children('i').attr('class', function () {
-                 return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';
-             });
-         });">
-        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
-        <span>
-        
-        
-            Hint: Click to expand
-        
-        </span>
-    </div>
-
-    <div class="expand-content" 
-         style="display:none; background-color:#b6f2b6; padding:8px; border-radius:4px; margin-top:6px;">
-        Hint content will give you directional support if needed&hellip;
-    </div>
-</div>
-<p></p>
-
-
-<p>If you get stuck and need more support you can expand the Guided walkthrough sections to get step by step instructions.</p>
-
-<div class="expand" style="background-color:#CC5500; border:2px solid #8A3600; padding:6px; border-radius:4px;">
-    <div class="expand-label" 
-         style="cursor: pointer;" 
-         onclick="$h = $(this);$h.next('div').slideToggle(100,function () {
-             $h.children('i').attr('class', function () {
-                 return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';
-             });
-         });">
-        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
-        <span>
-        
-        
-            Walkthrough: Click to expand
-        
-        </span>
-    </div>
-
-    <div class="expand-content" 
-         style="display:none; background-color:#FFB07C; padding:8px; border-radius:4px; margin-top:6px;">
-        Walkthrough content will give you guided instructions.
-    </div>
-</div>
-<p></p>
-<h2 id="initial-setup">Initial Setup</h2>
-<p>In order to progress through this Innovation Day, you will need to run a script that pre-creates infrastructure in your account. This may or may not have been done for you. If it has not been done you can find the setup script here: PROVIDE-LINK-TO-DOWNLOAD You should download the file and apply this via Resource manager.</p>
+<p>Your account has been preconfigured with two OCI streams. These streams provide durable storage for streaming data waiting to be handled by other services. The first thing that we will do is use the OCI Connector service to connect the two streams. Connecting the two streams will provide us with a point for furure expansion when we leverage the AI capeabilities of Oracle Autonomous Database to automatically determine if records represent anomolous data or not.</p>
+<p><img src="/images/01/connecting-streams.gif" alt="overview"></p>
+<p>In the OCI console, create a new connector that will automatically take data from the Incoming stream and push it through to the database stream. This is done with a managed connection service called Connector Hub. Name the connector &ldquo;Stream Connector&rdquo; select the Incoming stream as the source and the Database Stream as the desttination. Use the &ldquo;Trim Horizon&rdquo; stream possition to ensure you are reading the oldest data first.</p>
 
 <div class="expand" style="background-color:#d4f8d4; border:2px solid #0b5e0b; padding:6px; border-radius:4px;">
     <div class="expand-label" 
@@ -328,7 +292,7 @@
 
     <div class="expand-content" 
          style="display:none; background-color:#b6f2b6; padding:8px; border-radius:4px; margin-top:6px;">
-        Resource manager can be found in the OCI console under Developer Services. The ZIP file you downloaded can be used in resourvce manager to create a stack.
+        Connector hub can be found in the OCI console under Analytics &amp; AI, in the messaging section. Create a new connection and link the two streams using the incoming stream as the source and the database stream as the destination.
     </div>
 </div>
 <p></p>
@@ -356,26 +320,27 @@
          style="display:none; background-color:#FFB07C; padding:8px; border-radius:4px; margin-top:6px;">
         <ul>
 <li>From the OCI console, open the hamburger menu.</li>
-<li>Under Developer Services select Resource Manager</li>
-<li>Once inside of resource manager, select the Stacks option.
-<img src="/images/00/launch-resource-manager.gif" alt="overview"></li>
+<li>Select Analytics and AI from the menu</li>
+<li>Select Connector hub from the menu in the <strong>Messaging</strong> section</li>
+<li>Click <strong>Create connector</strong> to create a new connector</li>
+<li>For <strong>Connector name</strong> type &ldquo;Stream Connector&rdquo;</li>
+<li>For <strong>Description</strong> type &ldquo;Connect the two streams together&rdquo;</li>
+<li>For <strong>Resource Compartment</strong> select &ldquo;Innocation Day Compartment&rdquo;</li>
+<li>For <strong>Source</strong> and <strong>Target</strong> select Streaming</li>
+<li>When configuring the source, select the <strong>compartment</strong> &ldquo;Innovation Day&rdquo;, the <strong>Stream Pool</strong> &ldquo;Default&rdquo;, the <strong>Stream</strong> &ldquo;Incoming&rdquo;, and the <strong>Read Possition</strong> &ldquo;Trim Horizon&rdquo;</li>
+<li>When configuring the destination, select the <strong>compartment</strong> &ldquo;Innovation Day&rdquo;, the <strong>Stream Pool</strong> &ldquo;Default&rdquo;, the <strong>Stream</strong> &ldquo;Database&rdquo;</li>
+<li>Click <strong>Create</strong></li>
 </ul>
 
     </div>
 </div>
 <p></p>
-<p>Once you have completed the initial setup you can move on to section 1.</p>
 
 
-
-
-
-<footer class=" footline" >
+<footer class="footline">
 	
 </footer>
 
-        
-            </div> 
         
         </div>
         
@@ -407,6 +372,8 @@
             
                 
                     
+                        
+                        
                     
                 
                 
@@ -424,8 +391,6 @@
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -439,6 +404,7 @@
             
             
                 
+                    
                     
                 
                 
@@ -458,6 +424,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -479,10 +448,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/" title=""> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/01-part1/" title="Part 1"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/01-part1/" title="Part 1" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/02-part2/" title="Part 2" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -514,3 +483,4 @@
 
   </body>
 </html>
+

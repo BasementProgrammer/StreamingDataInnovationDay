@@ -6,11 +6,22 @@ chapter = true
 pre = "<b>1. </b>"
 +++
 
-### Chapter 1
+# Chapter 1
+## Learning about OCI
+The first part of this section will be an information session presented by your hosts. Learn about the services used, and the activities you will perform. Some of the activities that you will be completing in this sections are:
 
-# Connecting the database
 
-In this section we will start off by exploring the resources that have been pre-created in your account, and do some initial set up. Our goal for this section is to set up the Autonomoud database, preload a table with data, and connect the streaming data client to your database by way of Oracle Streams. Once this has been completed, your solution will look like this:
+## Activities in this section
 
-![overview](/images/part1.png)
+### Streaming Data
+In this section you will connect an external source of data to OCI streams. Streams provides a durrable managed path for streaming data to travel thropugh OCI to other services.
+
+### Configuring Oracle Autonomous Database
+In this section you will take an Oracle Autonomous AI Database that has been created in your account and pre-load data into the database. You will use Oracle import tools to create the tables and import the data.
+
+### OCI Functions
+In this section you will create and configure an OCI function to receive data streaming in from and points and insert the data into your Oracle Autonomous Database.
+
+### Test Streaming Data
+Your accout comes pre-configured with a streaming data client that can be used to simulate data coming in from multiple data sources. We will arap up the first section by using the data generated from the test client and validating that it successfully arives in your database.
 
