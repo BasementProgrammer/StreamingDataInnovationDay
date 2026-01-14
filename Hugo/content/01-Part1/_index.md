@@ -1,7 +1,7 @@
 +++
 title = "Part1"
 date = 2026-01-08T09:48:27-05:00
-weight = 5
+weight = 10
 chapter = true
 pre = "<b>1. </b>"
 +++
