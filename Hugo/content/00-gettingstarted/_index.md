@@ -1,7 +1,7 @@
 +++
-title = "Getting Started"
+title = "Part 0 - Getting Started"
 date = 2026-01-06T15:14:37-05:00
-weight = 0
+weight = 1
 chapter = true
 pre = "<b>0. </b>"
 +++
