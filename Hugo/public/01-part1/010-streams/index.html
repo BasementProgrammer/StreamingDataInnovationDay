@@ -12,22 +12,22 @@
     <title>Streams :: Streaming Data Innovation Day</title>
 
     
-    <link href="/css/nucleus.css?1768418470" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1768418470" rel="stylesheet">
-    <link href="/css/hybrid.css?1768418470" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1768418470" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1768418470" rel="stylesheet">
-    <link href="/css/auto-complete.css?1768418470" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1768418470" rel="stylesheet">
-    <link href="/css/theme.css?1768418470" rel="stylesheet">
-    <link href="/css/tabs.css?1768418470" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1768418470" rel="stylesheet">
+    <link href="/css/nucleus.css?1769543030" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1769543030" rel="stylesheet">
+    <link href="/css/hybrid.css?1769543030" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1769543030" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1769543030" rel="stylesheet">
+    <link href="/css/auto-complete.css?1769543030" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1769543030" rel="stylesheet">
+    <link href="/css/theme.css?1769543030" rel="stylesheet">
+    <link href="/css/tabs.css?1769543030" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1769543030" rel="stylesheet">
     
-    <link href="/css/theme-oracle.css?1768418470" rel="stylesheet">
+    <link href="/css/theme-oracle.css?1769543030" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1768418470"></script>
+    <script src="/js/jquery-3.3.1.min.js?1769543030"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1768418470"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1768418470"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1769543030"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1769543030"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1768418470"></script>
+<script type="text/javascript" src="/js/search.js?1769543030"></script>
 
     
   </div>
@@ -246,7 +246,11 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#connecting-the-streams">Connecting the streams</a></li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -269,6 +273,9 @@
         
 
 
+<p><strong>Important</strong> All of the resources for this workshop have bbeen created in a compartment cealled <strong>OCI-Innovation-Day</strong>. The OCI Console will often filter resources by the compartment. If the resources mentioned are not initially visible make sure the compartment is set correctly. The compartment sdelector can usually be found on the left hand side as seen here:
+<img src="/images/01/compartment.png" alt="overview"></p>
+<h2 id="connecting-the-streams">Connecting the streams</h2>
 <p>Your account has been preconfigured with two OCI streams. These streams provide durable storage for streaming data waiting to be handled by other services. The first thing that we will do is use the OCI Connector service to connect the two streams. Connecting the two streams will provide us with a point for furure expansion when we leverage the AI capeabilities of Oracle Autonomous Database to automatically determine if records represent anomolous data or not.</p>
 <p><img src="/images/01/connecting-streams.gif" alt="overview"></p>
 <p>In the OCI console, create a new connector that will automatically take data from the Incoming stream and push it through to the database stream. This is done with a managed connection service called Connector Hub. Name the connector &ldquo;Stream Connector&rdquo; select the Incoming stream as the source and the Database Stream as the desttination. Use the &ldquo;Trim Horizon&rdquo; stream possition to ensure you are reading the oldest data first.</p>
@@ -320,21 +327,28 @@
          style="display:none; background-color:#FFB07C; padding:8px; border-radius:4px; margin-top:6px;">
         <ul>
 <li>From the OCI console, open the hamburger menu.</li>
-<li>Select Analytics and AI from the menu</li>
-<li>Select Connector hub from the menu in the <strong>Messaging</strong> section</li>
+<li>Select <strong>Analytics and AI</strong> from the menu</li>
+<li>Select <strong>Connector hub</strong> from the menu in the <strong>Messaging</strong> section</li>
 <li>Click <strong>Create connector</strong> to create a new connector</li>
-<li>For <strong>Connector name</strong> type &ldquo;Stream Connector&rdquo;</li>
-<li>For <strong>Description</strong> type &ldquo;Connect the two streams together&rdquo;</li>
-<li>For <strong>Resource Compartment</strong> select &ldquo;Innocation Day Compartment&rdquo;</li>
+<li>For <strong>Connector name</strong> type <em>&ldquo;Stream Connector&rdquo;</em></li>
+<li>For <strong>Description</strong> type <em>&ldquo;Connect the two streams together&rdquo;</em></li>
+<li>For <strong>Resource Compartment</strong> select <em>&ldquo;OCI-Innovation-Day&rdquo;</em></li>
 <li>For <strong>Source</strong> and <strong>Target</strong> select Streaming</li>
-<li>When configuring the source, select the <strong>compartment</strong> &ldquo;Innovation Day&rdquo;, the <strong>Stream Pool</strong> &ldquo;Default&rdquo;, the <strong>Stream</strong> &ldquo;Incoming&rdquo;, and the <strong>Read Possition</strong> &ldquo;Trim Horizon&rdquo;</li>
-<li>When configuring the destination, select the <strong>compartment</strong> &ldquo;Innovation Day&rdquo;, the <strong>Stream Pool</strong> &ldquo;Default&rdquo;, the <strong>Stream</strong> &ldquo;Database&rdquo;</li>
-<li>Click <strong>Create</strong></li>
+<li>When configuring the source, select the <strong>compartment</strong> &ldquo;OCI-Innovation-Day&rdquo;, the <strong>Stream Pool</strong> &ldquo;Incoming Stream-pool&rdquo;, the <strong>Stream</strong> &ldquo;Incoming Stream&rdquo;, and the <strong>Read Possition</strong> &ldquo;Trim Horizon&rdquo;</li>
+<li>Leave the Task section blank.</li>
+<li>When configuring the destination, select the <strong>compartment</strong> &ldquo;OCI-Innovation-Day&rdquo;, the <strong>Stream</strong> &ldquo;Database Stream&rdquo;</li>
+<li>For each of the two streams click the option to create the default policy.
+<img src="/images/01/create.png" alt="create policies">
+<img src="/images/01/created.png" alt="create policies"></li>
+<li>Click <strong>Create</strong> at the bottom.</li>
 </ul>
 
     </div>
 </div>
 <p></p>
+<p>Once you are done with this section you will have a connector that retrieves data from the incoming stream and automatically pushes it to the database stream.</p>
+<p><img src="/images/01/completed.png" alt="create policies"></p>
+<p>Once you have completed this, feel free to move on to the next section.</p>
 
 
 <footer class="footline">
@@ -461,19 +475,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1768418470"></script>
-    <script src="/js/perfect-scrollbar.min.js?1768418470"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1768418470"></script>
-    <script src="/js/jquery.sticky.js?1768418470"></script>
-    <script src="/js/featherlight.min.js?1768418470"></script>
-    <script src="/js/highlight.pack.js?1768418470"></script>
+    <script src="/js/clipboard.min.js?1769543030"></script>
+    <script src="/js/perfect-scrollbar.min.js?1769543030"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1769543030"></script>
+    <script src="/js/jquery.sticky.js?1769543030"></script>
+    <script src="/js/featherlight.min.js?1769543030"></script>
+    <script src="/js/highlight.pack.js?1769543030"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1768418470"></script>
-    <script src="/js/learn.js?1768418470"></script>
-    <script src="/js/hugo-learn.js?1768418470"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1769543030"></script>
+    <script src="/js/learn.js?1769543030"></script>
+    <script src="/js/hugo-learn.js?1769543030"></script>
     
         
-            <script src="/mermaid/mermaid.js?1768418470"></script>
+            <script src="/mermaid/mermaid.js?1769543030"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

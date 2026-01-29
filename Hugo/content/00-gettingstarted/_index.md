@@ -37,6 +37,14 @@ Resource manager can be found in the OCI console under Developer Services. The Z
 * Under Developer Services select Resource Manager
 * Once inside of resource manager, select the Stacks option.
 ![overview](/images/00/launch-resource-manager.gif)
+* Choose the option to create a new stack
+* Select **zip** 
+* Drag and drop the zip file containing the teraform into the upload area.
+![drag and drop](/images/00/drag-zip.gif)
+* Click **Next**
+* Att he configure variables page accept all the defaults and select **Next**
+* Select the option to **Run apply** 
+* Click Create
 {{</answer>}}
 
-Once you have completed the initial setup you can move on to section 1.
+This initial setup will take a few minutes to complete. Once that has been done you can move on to the next sewction.
