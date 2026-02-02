@@ -6,7 +6,7 @@
     <description>Recent content on Streaming Data Innovation Day</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 14 Jan 2026 13:37:43 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 14 Jan 2026 15:31:56 -0500</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Streams</title>
@@ -14,6 +14,20 @@
       <pubDate>Wed, 14 Jan 2026 13:37:43 -0500</pubDate>
       <guid>http://localhost:1313/01-part1/010-streams/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Important&lt;/strong&gt; All of the resources for this workshop have bbeen created in a compartment cealled &lt;strong&gt;OCI-Innovation-Day&lt;/strong&gt;. The OCI Console will often filter resources by the compartment. If the resources mentioned are not initially visible make sure the compartment is set correctly. The compartment sdelector can usually be found on the left hand side as seen here:&#xA;&lt;img src=&#34;http://localhost:1313/images/01/compartment.png&#34; alt=&#34;overview&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;connecting-the-streams&#34;&gt;Connecting the streams&lt;/h2&gt;&#xA;&lt;p&gt;Your account has been preconfigured with two OCI streams. These streams provide durable storage for streaming data waiting to be handled by other services. The first thing that we will do is use the OCI Connector service to connect the two streams. Connecting the two streams will provide us with a point for furure expansion when we leverage the AI capeabilities of Oracle Autonomous Database to automatically determine if records represent anomolous data or not.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Database Preload</title>
+      <link>http://localhost:1313/01-part1/020-database-preload/</link>
+      <pubDate>Wed, 14 Jan 2026 15:31:56 -0500</pubDate>
+      <guid>http://localhost:1313/01-part1/020-database-preload/</guid>
+      <description>&lt;p&gt;Your account has been pre-configured with a new Oracle Autonomous AI Database. That database does not currently have any data or tables in it. In this section we will use Oracle&amp;rsquo;s Autonomous AI Database&amp;rsquo;s built in tools to create a table in the database, and pre-load that database with a set of sdample data. This sample data will enable us to laverage the AI capeabilities of Oracle Autonomous AI database in later sessions. The sample data in the table is designed to reflect streaming data from multiple sensor data.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/01-part1/030-database-insert-function/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/01-part1/030-database-insert-function/</guid>
+      <description></description>
     </item>
   </channel>
 </rss>

@@ -2,6 +2,7 @@
 date = '2026-01-14T13:37:43-05:00'
 draft = false
 title = 'Streams'
+weight = 100
 +++
 
 **Important** All of the resources for this workshop have bbeen created in a compartment cealled **OCI-Innovation-Day**. The OCI Console will often filter resources by the compartment. If the resources mentioned are not initially visible make sure the compartment is set correctly. The compartment sdelector can usually be found on the left hand side as seen here:

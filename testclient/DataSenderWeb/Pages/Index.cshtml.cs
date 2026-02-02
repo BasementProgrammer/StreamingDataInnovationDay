@@ -2,10 +2,12 @@ using DataSender;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Server.Kestrel;
+using Microsoft.IdentityModel.Tokens;
 using Oci.Common;
 using Oci.Common.Auth;
 using Oci.SecretsService.Models;
 using Oci.SecretsService.Requests;
+using Oci.StreamingService.Models;
 using Oci.VaultService.Models;
 using Oci.VaultService.Requests;
 using Oci.VaultService.Responses;
@@ -13,6 +15,7 @@ using System.ComponentModel;
 using System.Reflection.Metadata;
 using System.Security.Cryptography;
 using System.Text;
+using System.Xml.Linq;
 using static Org.BouncyCastle.Math.EC.ECCurve;
 
 namespace DataSenderWeb.Pages
@@ -77,12 +80,13 @@ namespace DataSenderWeb.Pages
             double minimumErrorTemp = double.Parse(formParameters["minimumErrorTemp"]);
             double maximumErrorTemp = double.Parse(formParameters["maximumErrorTemp"]);
             double tempErrorRate = double.Parse(formParameters["tempErrorRate"]);
-            string dataConfiguration = formParameters["dataConfiguration"];
 
-            // Variables to replace
-            // %%timeStamp%% - DateTime.Now.ToString("o")
-            // %%messageId%% - The number of the message for the particular client
-            // %%clientId%% - The number for the particular client
+            if (_streamConfig.StreamId.IsNullOrEmpty())
+            {
+                _streamConfig.StreamId = formParameters["streamId"];
+                _streamConfig.EndpointConfiguration = formParameters["endpointConfiguration"];
+            }
+
 
             int totalNumberOfMessages = numberOfClients * numberOfMessages;
 
@@ -105,26 +109,30 @@ namespace DataSenderWeb.Pages
                     for (int j = 0; j < numberOfClients; j++)
                     {
                         decimal reportingTemp = 0;
-                        if (dataConfiguration == "Temperature")
+
+                        // Figure out if this should be a normal or error temperature
+                        if (random.NextDouble() < (tempErrorRate / 100))
                         {
-                            // Figure out if this shoul dbe a normal or error temperature
-                            if (random.NextDouble() < (tempErrorRate / 100))
+                            // Generate an error temperature
+                            reportingTemp = (decimal)(random.NextDouble() * (maximumErrorTemp - minimumErrorTemp) + minimumErrorTemp);
+                            while ((reportingTemp > (decimal)minimumNormalTemp) || (reportingTemp < (decimal)maximumNormalTemp))
                             {
-                                // Generate an error temperature
                                 reportingTemp = (decimal)(random.NextDouble() * (maximumErrorTemp - minimumErrorTemp) + minimumErrorTemp);
                             }
-                            else
-                            {
-                                // Generate a normal temperature
-                                reportingTemp = (decimal)(random.NextDouble() * (maximumNormalTemp - minimumNormalTemp) + minimumNormalTemp);
-                            }
                         }
+                        else
+                        {
+                            // Generate a normal temperature
+                            reportingTemp = (decimal)(random.NextDouble() * (maximumNormalTemp - minimumNormalTemp) + minimumNormalTemp);
+                        }
+
+
                         // Replace the placeholders in the data string
                         string message = dataToSend
-                            .Replace("%%timeStamp%%", DateTime.Now.ToString("o"))
-                            .Replace("%%messageId%%", (i + 1).ToString())
-                            .Replace("%%temp%%", reportingTemp.ToString())
-                            .Replace("%%clientId%%", (j + 1).ToString());
+                                .Replace("%%timeStamp%%", DateTime.Now.ToString("o"))
+                                .Replace("%%messageId%%", (i + 1).ToString())
+                                .Replace("%%temperatureC%%", reportingTemp.ToString())
+                                .Replace("%%deviceId%%", (j + 1).ToString());
                         // Send the message using the current data sender
                         dataSenders[j].SendData(new[] { message });
                     }
