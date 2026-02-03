@@ -12,22 +12,22 @@
     <title>Part 2 :: Streaming Data Innovation Day</title>
 
     
-    <link href="/css/nucleus.css?1769785852" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1769785852" rel="stylesheet">
-    <link href="/css/hybrid.css?1769785852" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1769785852" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1769785852" rel="stylesheet">
-    <link href="/css/auto-complete.css?1769785852" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1769785852" rel="stylesheet">
-    <link href="/css/theme.css?1769785852" rel="stylesheet">
-    <link href="/css/tabs.css?1769785852" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1769785852" rel="stylesheet">
+    <link href="/css/nucleus.css?1770150712" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1770150712" rel="stylesheet">
+    <link href="/css/hybrid.css?1770150712" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1770150712" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1770150712" rel="stylesheet">
+    <link href="/css/auto-complete.css?1770150712" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1770150712" rel="stylesheet">
+    <link href="/css/theme.css?1770150712" rel="stylesheet">
+    <link href="/css/tabs.css?1770150712" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1770150712" rel="stylesheet">
     
-    <link href="/css/theme-oracle.css?1769785852" rel="stylesheet">
+    <link href="/css/theme-oracle.css?1770150712" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1769785852"></script>
+    <script src="/js/jquery-3.3.1.min.js?1770150712"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1769785852"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1769785852"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1770150712"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1770150712"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1769785852"></script>
+<script type="text/javascript" src="/js/search.js?1770150712"></script>
 
     
   </div>
@@ -141,9 +141,9 @@
  
   
     
-      <li data-nav-id="/01-part1/020-database-preload/" title="020 Database Preload" class="dd-item ">
-        <a href="/01-part1/020-database-preload/">
-        020 Database Preload
+      <li data-nav-id="/01-part1/010-streams/" title="Streams" class="dd-item ">
+        <a href="/01-part1/010-streams/">
+        Streams
         
         </a>
     </li>
@@ -162,9 +162,9 @@
  
   
     
-      <li data-nav-id="/01-part1/010-streams/" title="Streams" class="dd-item ">
-        <a href="/01-part1/010-streams/">
-        Streams
+      <li data-nav-id="/01-part1/020-database-preload/" title="Database Preload" class="dd-item ">
+        <a href="/01-part1/020-database-preload/">
+        Database Preload
         
         </a>
     </li>
@@ -200,6 +200,58 @@
           
       </a>
       
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/02-part2/010-database-users/" title="Database User Setup" class="dd-item ">
+        <a href="/02-part2/010-database-users/">
+        Database User Setup
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/02-part2/020-ai-training/" title="AI Model Training" class="dd-item ">
+        <a href="/02-part2/020-ai-training/">
+        AI Model Training
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
       
     </li>
   
@@ -273,9 +325,23 @@
 
 
 
-	<h3 id="chapter-x">Chapter X</h3>
-<h1 id="some-chapter-title">Some Chapter title</h1>
-<p>Lorem Ipsum.</p>
+	<h1 id="chapter-1">Chapter 1</h1>
+<h2 id="leveraging-the-ai-capeabilities-in-your-database">Leveraging the AI Capeabilities in your database</h2>
+<p>In the first section of this workshop, we created infrastructure that will allow us to take streaming data into our database. We also pre-loaded our database with some sample data that we can use to train AI models, directly inside of our Autonomous Database.</p>
+<p>In this section we are going lavarage the power of Oracle&rsquo;s Autonomous AI Database to train models that will determine if a reading indicates a fault in the temperature system in real time as the data is being sent in.</p>
+<h2 id="activities-in-this-section">Activities in this section</h2>
+<h3 id="training-ai-models">Training AI models</h3>
+<p>This section we will use the built in functionality of Oracle&rsquo;s Autonomous Database to:</p>
+<ul>
+<li>Train multiple AI models</li>
+<li>Evaluate the models for fit</li>
+<li>Deploy the AI model</li>
+<li>Test the AI model against some sample code.</li>
+</ul>
+<h3 id="oci-functions">OCI Functions</h3>
+<p>We will build two functions, the first will be used to insert data into the Autonomous Database and the second will be integratied with our streams to call the AI model hosted in our database to enrich the streaming data with the result of rather the vaule indicates a fault or not.</p>
+<h3 id="simulation">Simulation</h3>
+<p>We will leverage the test client to automatically stream data into the database, and observe the AI functionality in action.</p>
 
 
 
@@ -394,6 +460,41 @@
                     
 
                     
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -406,10 +507,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/01-part1/010-streams/" title="Streams"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/01-part1/020-database-preload/" title="Database Preload"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/00-gettingstarted/" title="Getting Started" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/02-part2/010-database-users/" title="Database User Setup" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -419,19 +520,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1769785852"></script>
-    <script src="/js/perfect-scrollbar.min.js?1769785852"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1769785852"></script>
-    <script src="/js/jquery.sticky.js?1769785852"></script>
-    <script src="/js/featherlight.min.js?1769785852"></script>
-    <script src="/js/highlight.pack.js?1769785852"></script>
+    <script src="/js/clipboard.min.js?1770150712"></script>
+    <script src="/js/perfect-scrollbar.min.js?1770150712"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1770150712"></script>
+    <script src="/js/jquery.sticky.js?1770150712"></script>
+    <script src="/js/featherlight.min.js?1770150712"></script>
+    <script src="/js/highlight.pack.js?1770150712"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1769785852"></script>
-    <script src="/js/learn.js?1769785852"></script>
-    <script src="/js/hugo-learn.js?1769785852"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1770150712"></script>
+    <script src="/js/learn.js?1770150712"></script>
+    <script src="/js/hugo-learn.js?1770150712"></script>
     
         
-            <script src="/mermaid/mermaid.js?1769785852"></script>
+            <script src="/mermaid/mermaid.js?1770150712"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

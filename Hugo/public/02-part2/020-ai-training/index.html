@@ -9,25 +9,25 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Getting Started :: Streaming Data Innovation Day</title>
+    <title>AI Model Training :: Streaming Data Innovation Day</title>
 
     
-    <link href="/css/nucleus.css?1770141810" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1770141810" rel="stylesheet">
-    <link href="/css/hybrid.css?1770141810" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1770141810" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1770141810" rel="stylesheet">
-    <link href="/css/auto-complete.css?1770141810" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1770141810" rel="stylesheet">
-    <link href="/css/theme.css?1770141810" rel="stylesheet">
-    <link href="/css/tabs.css?1770141810" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1770141810" rel="stylesheet">
+    <link href="/css/nucleus.css?1770150712" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1770150712" rel="stylesheet">
+    <link href="/css/hybrid.css?1770150712" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1770150712" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1770150712" rel="stylesheet">
+    <link href="/css/auto-complete.css?1770150712" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1770150712" rel="stylesheet">
+    <link href="/css/theme.css?1770150712" rel="stylesheet">
+    <link href="/css/tabs.css?1770150712" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1770150712" rel="stylesheet">
     
-    <link href="/css/theme-oracle.css?1770141810" rel="stylesheet">
+    <link href="/css/theme-oracle.css?1770150712" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1770141810"></script>
+    <script src="/js/jquery-3.3.1.min.js?1770150712"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -37,7 +37,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/00-gettingstarted/">
+  <body class="" data-url="/02-part2/020-ai-training/">
     <nav id="sidebar" class="">
 
 
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1770141810"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1770141810"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1770150712"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1770150712"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1770141810"></script>
+<script type="text/javascript" src="/js/search.js?1770150712"></script>
 
     
   </div>
@@ -92,7 +92,7 @@
     
     <li data-nav-id="/00-gettingstarted/" title="Getting Started" class="dd-item
         
-        active
+        
         
         ">
       <a href="/00-gettingstarted/">
@@ -174,27 +174,6 @@
 
             
           
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/01-part1/030-database-insert-function/" title="Database Function" class="dd-item ">
-        <a href="/01-part1/030-database-insert-function/">
-        Database Function
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
         
         </ul>
       
@@ -212,7 +191,7 @@
   
     
     <li data-nav-id="/02-part2/" title="Part 2" class="dd-item
-        
+        parent
         
         
         ">
@@ -221,6 +200,58 @@
           
       </a>
       
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/02-part2/010-database-users/" title="Database User Setup" class="dd-item ">
+        <a href="/02-part2/010-database-users/">
+        Database User Setup
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/02-part2/020-ai-training/" title="AI Model Training" class="dd-item active">
+        <a href="/02-part2/020-ai-training/">
+        AI Model Training
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
       
     </li>
   
@@ -259,6 +290,8 @@
                         </a>
                     </span>
                   
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
                   <span class="links">
                  
                  
@@ -269,7 +302,13 @@
             
           
           
-            <a href='/'></a> > Getting Started
+            
+            
+          
+          
+            <a href='/'></a> > <a href='/02-part2/'>Part 2</a> > AI Model Training
+          
+        
           
         
           
@@ -278,6 +317,17 @@
                   </span>
                 </div>
                 
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#ai-trainging">AI Trainging</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
               </div>
             </div>
             
@@ -285,18 +335,24 @@
         
         </div>
         
-          <div id="chapter">
-        
         <div id="body-inner">
+          
+            <h1>
+              
+              AI Model Training
+            </h1>
           
 
         
 
 
+<p>In this section we are going to use the built in functionality for Oracle Autonomous AI Database to build and train a model that will determine if a temperature vaule represents a failure state or not.</p>
+<h2 id="ai-trainging">AI Trainging</h2>
+<p>In the development section of the <strong>All Database Actions</strong> section, you can open <strong>Oracle Machine Learning (OML)</strong> and log in with your AI User. This will give you aceess to all of the OML tools.</p>
 
-	<h1 id="getting-started">Getting started</h1>
-<h2 id="conventions">Conventions</h2>
-<p>Throught this session you will encounter activities. The main body of the materials will guide you through what needs to be accomplished in each section. We have left the instructions open ended so that you can learn about OCI as you go. If you get stuck allong th way there will be green hint sections and organge Walkthrough sections. The hint sections will give you directional pointers to help you along your way. If you get stuck the walkthrough sections will provide step by step instructions.</p>
+<div class="notices note" ><p>You can not use the built in ADMIN user for OML. You should have users created specifically for OML use.</p>
+</div>
+
 
 <div class="expand" style="background-color:#d4f8d4; border:2px solid #0b5e0b; padding:6px; border-radius:4px;">
     <div class="expand-label" 
@@ -317,60 +373,8 @@
 
     <div class="expand-content" 
          style="display:none; background-color:#b6f2b6; padding:8px; border-radius:4px; margin-top:6px;">
-        Hint content will give you directional support if needed&hellip;
-    </div>
-</div>
-<p></p>
-
-
-<p>If you get stuck and need more support you can expand the Guided walkthrough sections to get step by step instructions.</p>
-
-<div class="expand" style="background-color:#CC5500; border:2px solid #8A3600; padding:6px; border-radius:4px;">
-    <div class="expand-label" 
-         style="cursor: pointer;" 
-         onclick="$h = $(this);$h.next('div').slideToggle(100,function () {
-             $h.children('i').attr('class', function () {
-                 return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';
-             });
-         });">
-        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
-        <span>
-        
-        
-            Walkthrough: Click to expand
-        
-        </span>
-    </div>
-
-    <div class="expand-content" 
-         style="display:none; background-color:#FFB07C; padding:8px; border-radius:4px; margin-top:6px;">
-        Walkthrough content will give you guided instructions.
-    </div>
-</div>
-<p></p>
-<h2 id="initial-setup">Initial Setup</h2>
-<p>In order to progress through this Innovation Day, you will need to run a script that pre-creates infrastructure in your account. This may or may not have been done for you. If it has not been done you can find the setup script here: PROVIDE-LINK-TO-DOWNLOAD You should download the file and apply this via Resource manager.</p>
-
-<div class="expand" style="background-color:#d4f8d4; border:2px solid #0b5e0b; padding:6px; border-radius:4px;">
-    <div class="expand-label" 
-         style="cursor: pointer;" 
-         onclick="$h = $(this);$h.next('div').slideToggle(100,function () {
-             $h.children('i').attr('class', function () {
-                 return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';
-             });
-         });">
-        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
-        <span>
-        
-        
-            Hint: Click to expand
-        
-        </span>
-    </div>
-
-    <div class="expand-content" 
-         style="display:none; background-color:#b6f2b6; padding:8px; border-radius:4px; margin-top:6px;">
-        Resource manager can be found in the OCI console under Developer Services. The ZIP file you downloaded can be used in resourvce manager to create a stack.
+        <strong>OML</strong> Is avaialble form the <strong>All Database Actions</strong> drop down in the Oracle Autonomous AI Database** drop down by selecting the <strong>Development</strong> heading. Machine learning is one of the tabls along the left hand side.
+<img src="/images/02/oml-launch.png" alt="Launching OML">
     </div>
 </div>
 <p></p>
@@ -398,34 +402,101 @@
          style="display:none; background-color:#FFB07C; padding:8px; border-radius:4px; margin-top:6px;">
         <ul>
 <li>From the OCI console, open the hamburger menu.</li>
-<li>Under Developer Services select Resource Manager</li>
-<li>Once inside of resource manager, select the Stacks option.
-<img src="/images/00/launch-resource-manager.gif" alt="overview"></li>
-<li>Choose the option to create a new stack</li>
-<li>Select <strong>zip</strong></li>
-<li>Drag and drop the zip file containing the teraform into the upload area.
-<img src="/images/00/drag-zip.gif" alt="drag and drop"></li>
-<li>Click <strong>Next</strong></li>
-<li>Att he configure variables page accept all the defaults and select <strong>Next</strong></li>
-<li>Select the option to <strong>Run apply</strong></li>
-<li>Click Create</li>
+<li>Select <strong>Orace AI Database</strong> from the menu</li>
+<li>Select <strong>Autonomous AI Database</strong></li>
+<li>From the list of databases click on <strong>Innovation Day ATPDB</strong> to open your database.</li>
+<li>Click the <strong>Database Actions</strong> drop down</li>
+<li>Click on <strong>View all database actions</strong></li>
+<li>Along the top of the <strong>Oracle Database Actions Launchpad</strong> selec thte <strong>Development</strong> option</li>
+<li>Along the left hand side, select the <strong>Machine Learning</strong> option</li>
+<li>Log into the Oracle Machine Learning application with your AIUser that was created earlier</li>
 </ul>
 
     </div>
 </div>
 <p></p>
-<p>This initial setup will take a few minutes to complete. Once that has been done you can move on to the next sewction.</p>
+<p>Inside of the Oracle Machine Learning application click on the <strong>AutoML</strong> application to start training models on your data.</p>
+<p>Oracle AutoML works on the idea of running experiments. These experiments can be used to test various ML models on your data in order to determine which model works best in your situation. By using Oracle AutoML you can train models without having to have extensive AI/ML skills.</p>
+<p>Create a new Experiment in the AutoML application. In your experiment, provide a name and a sescription. The experiment will use the database table ADMIN.SENSOR_DATA to predict the value of the FAULT column. For the experiment we want to select <strong>Regression</strong> and leave the <strong>Case Id</strong> blank. After saving your experiment, sewlect the option to run, with the <strong>Faster Results</strong> option.</p>
+
+<div class="expand" style="background-color:#d4f8d4; border:2px solid #0b5e0b; padding:6px; border-radius:4px;">
+    <div class="expand-label" 
+         style="cursor: pointer;" 
+         onclick="$h = $(this);$h.next('div').slideToggle(100,function () {
+             $h.children('i').attr('class', function () {
+                 return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';
+             });
+         });">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+        
+            Hint: Click to expand
+        
+        </span>
+    </div>
+
+    <div class="expand-content" 
+         style="display:none; background-color:#b6f2b6; padding:8px; border-radius:4px; margin-top:6px;">
+        Configure your experiment like this:
+<img src="/images/02/oml-training-3.png" alt="Configure Experiment">
+    </div>
+</div>
+<p></p>
 
 
 
+<div class="expand" style="background-color:#CC5500; border:2px solid #8A3600; padding:6px; border-radius:4px;">
+    <div class="expand-label" 
+         style="cursor: pointer;" 
+         onclick="$h = $(this);$h.next('div').slideToggle(100,function () {
+             $h.children('i').attr('class', function () {
+                 return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';
+             });
+         });">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+        
+            Walkthrough: Click to expand
+        
+        </span>
+    </div>
+
+    <div class="expand-content" 
+         style="display:none; background-color:#FFB07C; padding:8px; border-radius:4px; margin-top:6px;">
+        <ul>
+<li>From the AutoML Experiments window click the option to create a new experiment.
+<img src="/images/02/oml-training-1.png" alt="Create Experiment"></li>
+<li>Give your AutoML experiment a name and a description.
+<img src="/images/02/oml-training-2.png" alt="Name and Description"></li>
+<li>Click the magnifine glass next to data source to browse the avaialble tables in your database.</li>
+<li>Select the ADMIN schema and the table SENSOR_DATA. (These names could be different if you used a different table name on import.)
+<img src="/images/02/oml-training-3.png" alt="Configure Experiment"></li>
+<li>For <strong>Predict</strong> select the column <strong>FAULT</strong></li>
+<li>For <strong>Prediction Type</strong> select the option <strong>Regression</strong></li>
+<li>Save your experiment definition
+<img src="/images/02/oml-training-4.png" alt="Save Experiment"></li>
+<li>Click the option to <strong>Start</strong> training and choose the option for <strong>Faster Results</strong>
+<img src="/images/02/oml-training-5.png" alt="Start Training"></li>
+<li>Once the training has been completed, you will see the results below.</li>
+</ul>
+
+    </div>
+</div>
+<p></p>
+<p>Once completed you will see the results from your model training:</p>
+<p><img src="/images/02/oml-training-6.png" alt="Training Results"></p>
+
+<div class="notices note" ><p>If the training run fails, then wait a minute or two and then try rerunning the experiment again.</p>
+</div>
 
 
-<footer class=" footline" >
+
+<footer class="footline">
 	
 </footer>
 
-        
-            </div> 
         
         </div>
         
@@ -457,6 +528,8 @@
             
                 
                     
+                        
+                        
                     
                 
                 
@@ -474,9 +547,6 @@
             
                 
                     
-                        
-                        
-                    
                 
                 
 
@@ -484,22 +554,6 @@
                     
                     
 
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
                         
             
@@ -541,6 +595,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -548,6 +603,42 @@
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
             
         
@@ -561,10 +652,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/" title=""> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/02-part2/010-database-users/" title="Database User Setup"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/01-part1/" title="Part 1" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/02-part2/010-database-users/" title="Database User Setup" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -574,19 +665,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1770141810"></script>
-    <script src="/js/perfect-scrollbar.min.js?1770141810"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1770141810"></script>
-    <script src="/js/jquery.sticky.js?1770141810"></script>
-    <script src="/js/featherlight.min.js?1770141810"></script>
-    <script src="/js/highlight.pack.js?1770141810"></script>
+    <script src="/js/clipboard.min.js?1770150712"></script>
+    <script src="/js/perfect-scrollbar.min.js?1770150712"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1770150712"></script>
+    <script src="/js/jquery.sticky.js?1770150712"></script>
+    <script src="/js/featherlight.min.js?1770150712"></script>
+    <script src="/js/highlight.pack.js?1770150712"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1770141810"></script>
-    <script src="/js/learn.js?1770141810"></script>
-    <script src="/js/hugo-learn.js?1770141810"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1770150712"></script>
+    <script src="/js/learn.js?1770150712"></script>
+    <script src="/js/hugo-learn.js?1770150712"></script>
     
         
-            <script src="/mermaid/mermaid.js?1770141810"></script>
+            <script src="/mermaid/mermaid.js?1770150712"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
@@ -596,3 +687,4 @@
 
   </body>
 </html>
+
