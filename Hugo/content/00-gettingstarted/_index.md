@@ -25,7 +25,11 @@ Walkthrough content will give you guided instructions.
 
 ## Initial Setup
 
-In order to progress through this Innovation Day, you will need to run a script that pre-creates infrastructure in your account. This may or may not have been done for you. If it has not been done you can find the setup script here: PROVIDE-LINK-TO-DOWNLOAD You should download the file and apply this via Resource manager.
+In order to progress through this Innovation Day, you will need to run a script that pre-creates infrastructure in your account. This may or may not have been done for you. If it has not been done you can find the setup script here: 
+
+{{%attachments style="grey" /%}}
+
+You should download the file and apply this via Resource manager.
 
 {{<hint>}}
 Resource manager can be found in the OCI console under Developer Services. The ZIP file you downloaded can be used in resourvce manager to create a stack.
@@ -43,8 +47,38 @@ Resource manager can be found in the OCI console under Developer Services. The Z
 ![drag and drop](/images/00/drag-zip.gif)
 * Click **Next**
 * Att he configure variables page accept all the defaults and select **Next**
-* Select the option to **Run apply** 
 * Click Create
+* Once the stack has been created select the **Plan** option to allow Terraform to plan the stack.
+![Plan](/images/00/stack-plan.png)
+* Click **plan** from the slide out on the right to confirm the plan action.
+![Plan](/images/00/stack-apply.png)
+* Click Apply to apply the stack to your account.
 {{</answer>}}
 
-This initial setup will take a few minutes to complete. Once that has been done you can move on to the next sewction.
+{{% notice note %}}
+If your initial **Apply** fails, you may need to try the **plan** and **apply** again.
+{{% /notice %}}
+
+## Retrieve configuration Details
+
+This initial setup will take a few minutes to complete. 
+
+Once your stack has been created you will need to retrieve some configuration details for the steps to follow. Note down the following items for later use:
+* Database Admin Password
+* Compartment ID
+
+From the Resource Manager page click on the Stack to open it.
+![Open Stack](/images/00/password-1.png)
+
+From the Resources menu, click the **View State** option.
+![Open Stack](/images/00/password-2.png)
+
+Find the values here:
+![Open Stack](/images/00/password-3.png)
+
+{{% notice note %}}
+Every password is unique and randomly generated at the point of creation. No two passwords will be the same and your password will be different if you run this workshop multiple times.
+{{% /notice %}}
+
+Additionally you will need to note down your Tennancy OCID. You can find that tin the variables section of the stack.
+![Open Stack](/images/00/tenancy-ocid.png)

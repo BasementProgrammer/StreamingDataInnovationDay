@@ -68,3 +68,5 @@ Once completed you will see the results from your model training:
 {{% notice note %}}
 If the training run fails, then wait a minute or two and then try rerunning the experiment again. 
 {{% /notice %}}
+
+Once your model training has run through completely, you can rerun the training job using the **Better Accuracy** option. This will take longer to complete than the first run. Once you have completed the second run we can move to deploy your models in the next section.

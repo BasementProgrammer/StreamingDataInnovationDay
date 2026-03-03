@@ -9,6 +9,13 @@
     <lastBuildDate>Wed, 14 Jan 2026 15:31:56 -0500</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Database User Setup</title>
+      <link>http://localhost:1313/02-part2/010-database-users/</link>
+      <pubDate>Wed, 14 Jan 2026 13:37:43 -0500</pubDate>
+      <guid>http://localhost:1313/02-part2/010-database-users/</guid>
+      <description>&lt;p&gt;In order to leverage the AI capeabilities in Oracle Autonomous Database you will need to create an AI user. You should not try and use AI capeabilities as the Admin.&lt;/p&gt;&#xA;&lt;h2 id=&#34;create-user&#34;&gt;Create User&lt;/h2&gt;&#xA;&lt;p&gt;In the Autonomous Datbase sectionm of the console, use the Database User Application to create a new user. Name the user &lt;strong&gt;AIUSer&lt;/strong&gt; and assign them the &lt;strong&gt;OML&lt;/strong&gt; user permissions. Set the user Quota to unlimited. You will need to create a strong password for the user, and record this password for later.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Streams</title>
       <link>http://localhost:1313/01-part1/010-streams/</link>
       <pubDate>Wed, 14 Jan 2026 13:37:43 -0500</pubDate>
@@ -23,11 +30,32 @@
       <description>&lt;p&gt;Your account has been pre-configured with a new Oracle Autonomous AI Database. That database does not currently have any data or tables in it. In this section we will use Oracle&amp;rsquo;s Autonomous AI Database&amp;rsquo;s built in tools to create a table in the database, and pre-load that database with a set of sdample data. This sample data will enable us to laverage the AI capeabilities of Oracle Autonomous AI database in later sessions. The sample data in the table is designed to reflect streaming data from multiple sensor data.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Database Function</title>
-      <link>http://localhost:1313/01-part1/030-database-insert-function/</link>
+      <title>AI Model Training</title>
+      <link>http://localhost:1313/02-part2/020-ai-training/</link>
+      <pubDate>Wed, 14 Jan 2026 13:37:43 -0500</pubDate>
+      <guid>http://localhost:1313/02-part2/020-ai-training/</guid>
+      <description>&lt;p&gt;In this section we are going to use the built in functionality for Oracle Autonomous AI Database to build and train a model that will determine if a temperature vaule represents a failure state or not.&lt;/p&gt;&#xA;&lt;h2 id=&#34;ai-trainging&#34;&gt;AI Trainging&lt;/h2&gt;&#xA;&lt;p&gt;In the development section of the &lt;strong&gt;All Database Actions&lt;/strong&gt; section, you can open &lt;strong&gt;Oracle Machine Learning (OML)&lt;/strong&gt; and log in with your AI User. This will give you aceess to all of the OML tools.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Security Setup</title>
+      <link>http://localhost:1313/01-part1/030-security-setup/</link>
       <pubDate>Wed, 14 Jan 2026 15:31:56 -0500</pubDate>
-      <guid>http://localhost:1313/01-part1/030-database-insert-function/</guid>
-      <description>&lt;p&gt;The final part of section one is connecting the function that will allow data to be inserted into the database from the streams automatically. For this we wil leverage OCI&amp;rsquo;s Serverless functions and the OCI Connector hub to automatically invoke our function.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/01-part1/030-security-setup/</guid>
+      <description>&lt;p&gt;Your account has come with a pre-configured test client that we will use later. In order for this to be used we need to set up Resource Principal Authentication for this client to be able to work correctly. Resource Principal Authentication allows resources, in this case the Container Instance to be able to access OCI resources without having to supply user names and passwords.&lt;/p&gt;&#xA;&lt;h2 id=&#34;dynamic-group-setup&#34;&gt;Dynamic Group Setup&lt;/h2&gt;&#xA;&lt;p&gt;The first stepp in setting up resource principal authentication for this solution is to creat a dynamic group in your domain for the container instance that resides in your compartment. Name the Dynamic Group &lt;strong&gt;Container-Instance-Dynamic-Group&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Deploy Models</title>
+      <link>http://localhost:1313/02-part2/030-deploy-models/</link>
+      <pubDate>Wed, 14 Jan 2026 13:37:43 -0500</pubDate>
+      <guid>http://localhost:1313/02-part2/030-deploy-models/</guid>
+      <description>&lt;p&gt;In the previouse section of the workshop we built and trained several models to predict faults based on the sample data. In this section we will deploy the models so that external processes, such as Oracle Functions will be able to call the model to classify data.&lt;/p&gt;&#xA;&lt;h2 id=&#34;choosing-a-model&#34;&gt;Choosing a model&lt;/h2&gt;&#xA;&lt;p&gt;The model trainign displays the results of training and testing based on the data.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/02/model-leaderboard.png&#34; alt=&#34;Training Results&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Based on the training resyults you will want to pick a model that indicates the lowest possible error rate. In this training run the modesl that performed the best were &lt;strong&gt;Neural Network&lt;/strong&gt; and &lt;strong&gt;Support Vector Machine (Gaussian)&lt;/strong&gt; Your results may vary.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Testing You Models</title>
+      <link>http://localhost:1313/02-part2/040-testing-your-model/</link>
+      <pubDate>Wed, 14 Jan 2026 13:37:43 -0500</pubDate>
+      <guid>http://localhost:1313/02-part2/040-testing-your-model/</guid>
+      <description>&lt;h2 id=&#34;initial-testing&#34;&gt;Initial testing&lt;/h2&gt;&#xA;&lt;p&gt;In the last section we deployed a model. In order to ensure that the model is working correctly we need to test the model for both functionality as well as accuracy.&lt;/p&gt;&#xA;&lt;h2 id=&#34;oci-code-editor&#34;&gt;OCI Code Editor&lt;/h2&gt;&#xA;&lt;p&gt;OCI provides a Cloud Based IDE that will allow you to edit and test code. We will use this cloud editor to write code for this lab.&lt;/p&gt;&#xA;&lt;p&gt;Launch the Code Editor from the OCI console:&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

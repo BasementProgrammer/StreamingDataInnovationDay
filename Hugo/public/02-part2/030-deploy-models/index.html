@@ -9,25 +9,25 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Streams :: Streaming Data Innovation Day</title>
+    <title>Deploy Models :: Streaming Data Innovation Day</title>
 
     
-    <link href="/css/nucleus.css?1772463719" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1772463719" rel="stylesheet">
-    <link href="/css/hybrid.css?1772463719" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1772463719" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1772463719" rel="stylesheet">
-    <link href="/css/auto-complete.css?1772463719" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1772463719" rel="stylesheet">
-    <link href="/css/theme.css?1772463719" rel="stylesheet">
-    <link href="/css/tabs.css?1772463719" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1772463719" rel="stylesheet">
+    <link href="/css/nucleus.css?1772467623" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1772467623" rel="stylesheet">
+    <link href="/css/hybrid.css?1772467623" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1772467623" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1772467623" rel="stylesheet">
+    <link href="/css/auto-complete.css?1772467623" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1772467623" rel="stylesheet">
+    <link href="/css/theme.css?1772467623" rel="stylesheet">
+    <link href="/css/tabs.css?1772467623" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1772467623" rel="stylesheet">
     
-    <link href="/css/theme-oracle.css?1772463719" rel="stylesheet">
+    <link href="/css/theme-oracle.css?1772467623" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1772463719"></script>
+    <script src="/js/jquery-3.3.1.min.js?1772467623"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -37,7 +37,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/01-part1/010-streams/">
+  <body class="" data-url="/02-part2/030-deploy-models/">
     <nav id="sidebar" class="">
 
 
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1772463719"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1772463719"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1772467623"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1772467623"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1772463719"></script>
+<script type="text/javascript" src="/js/search.js?1772467623"></script>
 
     
   </div>
@@ -115,7 +115,7 @@
   
     
     <li data-nav-id="/01-part1/" title="Part 1" class="dd-item
-        parent
+        
         
         
         ">
@@ -141,7 +141,7 @@
  
   
     
-      <li data-nav-id="/01-part1/010-streams/" title="Streams" class="dd-item active">
+      <li data-nav-id="/01-part1/010-streams/" title="Streams" class="dd-item ">
         <a href="/01-part1/010-streams/">
         Streams
         
@@ -212,7 +212,7 @@
   
     
     <li data-nav-id="/02-part2/" title="Part 2" class="dd-item
-        
+        parent
         
         
         ">
@@ -280,7 +280,7 @@
  
   
     
-      <li data-nav-id="/02-part2/030-deploy-models/" title="Deploy Models" class="dd-item ">
+      <li data-nav-id="/02-part2/030-deploy-models/" title="Deploy Models" class="dd-item active">
         <a href="/02-part2/030-deploy-models/">
         Deploy Models
         
@@ -369,7 +369,7 @@
             
           
           
-            <a href='/'></a> > <a href='/01-part1/'>Part 1</a> > Streams
+            <a href='/'></a> > <a href='/02-part2/'>Part 2</a> > Deploy Models
           
         
           
@@ -384,7 +384,8 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#connecting-the-streams">Connecting the streams</a></li>
+    <li><a href="#choosing-a-model">Choosing a model</a></li>
+    <li><a href="#deploy-your-model">Deploy your model</a></li>
   </ul>
 </nav>
     </div>
@@ -402,89 +403,27 @@
           
             <h1>
               
-              Streams
+              Deploy Models
             </h1>
           
 
         
 
 
-<p><strong>Important</strong> All of the resources for this workshop have bbeen created in a compartment cealled <strong>OCI-Innovation-Day</strong>. The OCI Console will often filter resources by the compartment. If the resources mentioned are not initially visible make sure the compartment is set correctly. The compartment sdelector can usually be found on the left hand side as seen here:
-<img src="/images/01/compartment.png" alt="overview"></p>
-<h2 id="connecting-the-streams">Connecting the streams</h2>
-<p>Your account has been preconfigured with two OCI streams. These streams provide durable storage for streaming data waiting to be handled by other services. The first thing that we will do is use the OCI Connector service to connect the two streams. Connecting the two streams will provide us with a point for furure expansion when we leverage the AI capeabilities of Oracle Autonomous Database to automatically determine if records represent anomolous data or not.</p>
-<p><img src="/images/01/connecting-streams.gif" alt="overview"></p>
-<p>In the OCI console, create a new connector that will automatically take data from the Incoming stream and push it through to the database stream. This is done with a managed connection service called Connector Hub. Name the connector &ldquo;Stream Connector&rdquo; select the Incoming stream as the source and the Database Stream as the desttination. Use the &ldquo;Trim Horizon&rdquo; stream possition to ensure you are reading the oldest data first.</p>
-
-<div class="expand" style="background-color:#d4f8d4; border:2px solid #0b5e0b; padding:6px; border-radius:4px;">
-    <div class="expand-label" 
-         style="cursor: pointer;" 
-         onclick="$h = $(this);$h.next('div').slideToggle(100,function () {
-             $h.children('i').attr('class', function () {
-                 return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';
-             });
-         });">
-        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
-        <span>
-        
-        
-            Hint: Click to expand
-        
-        </span>
-    </div>
-
-    <div class="expand-content" 
-         style="display:none; background-color:#b6f2b6; padding:8px; border-radius:4px; margin-top:6px;">
-        Connector hub can be found in the OCI console under Analytics &amp; AI, in the messaging section. Create a new connection and link the two streams using the incoming stream as the source and the database stream as the destination.
-    </div>
-</div>
-<p></p>
-
-
-
-<div class="expand" style="background-color:#CC5500; border:2px solid #8A3600; padding:6px; border-radius:4px;">
-    <div class="expand-label" 
-         style="cursor: pointer;" 
-         onclick="$h = $(this);$h.next('div').slideToggle(100,function () {
-             $h.children('i').attr('class', function () {
-                 return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';
-             });
-         });">
-        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
-        <span>
-        
-        
-            Walkthrough: Click to expand
-        
-        </span>
-    </div>
-
-    <div class="expand-content" 
-         style="display:none; background-color:#FFB07C; padding:8px; border-radius:4px; margin-top:6px;">
-        <ul>
-<li>From the OCI console, open the hamburger menu.</li>
-<li>Select <strong>Analytics and AI</strong> from the menu</li>
-<li>Select <strong>Connector hub</strong> from the menu in the <strong>Messaging</strong> section</li>
-<li>Click <strong>Create connector</strong> to create a new connector</li>
-<li>For <strong>Connector name</strong> type <em>&ldquo;Stream Connector&rdquo;</em></li>
-<li>For <strong>Description</strong> type <em>&ldquo;Connect the two streams together&rdquo;</em></li>
-<li>For <strong>Resource Compartment</strong> select <em>&ldquo;OCI-Innovation-Day&rdquo;</em></li>
-<li>For <strong>Source</strong> and <strong>Target</strong> select Streaming</li>
-<li>When configuring the source, select the <strong>compartment</strong> &ldquo;OCI-Innovation-Day&rdquo;, the <strong>Stream Pool</strong> &ldquo;Incoming Stream-pool&rdquo;, the <strong>Stream</strong> &ldquo;Incoming Stream&rdquo;, and the <strong>Read Possition</strong> &ldquo;Trim Horizon&rdquo;</li>
-<li>Leave the Task section blank.</li>
-<li>When configuring the destination, select the <strong>compartment</strong> &ldquo;OCI-Innovation-Day&rdquo;, the <strong>Stream</strong> &ldquo;Database Stream&rdquo;</li>
-<li>For each of the two streams click the option to create the default policy.
-<img src="/images/01/create.png" alt="create policies">
-<img src="/images/01/created.png" alt="create policies"></li>
-<li>Click <strong>Create</strong> at the bottom.</li>
+<p>In the previouse section of the workshop we built and trained several models to predict faults based on the sample data. In this section we will deploy the models so that external processes, such as Oracle Functions will be able to call the model to classify data.</p>
+<h2 id="choosing-a-model">Choosing a model</h2>
+<p>The model trainign displays the results of training and testing based on the data.</p>
+<p><img src="/images/02/model-leaderboard.png" alt="Training Results"></p>
+<p>Based on the training resyults you will want to pick a model that indicates the lowest possible error rate. In this training run the modesl that performed the best were <strong>Neural Network</strong> and <strong>Support Vector Machine (Gaussian)</strong> Your results may vary.</p>
+<h2 id="deploy-your-model">Deploy your model</h2>
+<p>In order to deploy your model, select the model that you want to leverage and then click the Deploy option at the top of the results list.</p>
+<p>In order to deploy your model you will need to provide, at a minimum, a portion of a URI and a model deployment version. For this deployment use the values:</p>
+<ul>
+<li>URI <strong>myModel</strong></li>
+<li>Version 1</li>
 </ul>
-
-    </div>
-</div>
-<p></p>
-<p>Once you are done with this section you will have a connector that retrieves data from the incoming stream and automatically pushes it to the database stream.</p>
-<p><img src="/images/01/completed.png" alt="create policies"></p>
-<p>Once you have completed this, feel free to move on to the next section.</p>
+<p><img src="/images/02/deploy-model.png" alt="Model Deployment"></p>
+<p>This deployment will take a few moments and then you will have a deployed AI model in your database!</p>
 
 
 <footer class="footline">
@@ -541,75 +480,6 @@
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                 
                 
 
@@ -666,10 +536,82 @@
             
         
                     
+            
+        
+                    
                         
             
             
                 
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -694,10 +636,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/01-part1/" title="Part 1"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/02-part2/020-ai-training/" title="AI Model Training"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/01-part1/020-database-preload/" title="Database Preload" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/02-part2/040-testing-your-model/" title="Testing You Models" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -707,19 +649,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1772463719"></script>
-    <script src="/js/perfect-scrollbar.min.js?1772463719"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1772463719"></script>
-    <script src="/js/jquery.sticky.js?1772463719"></script>
-    <script src="/js/featherlight.min.js?1772463719"></script>
-    <script src="/js/highlight.pack.js?1772463719"></script>
+    <script src="/js/clipboard.min.js?1772467623"></script>
+    <script src="/js/perfect-scrollbar.min.js?1772467623"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1772467623"></script>
+    <script src="/js/jquery.sticky.js?1772467623"></script>
+    <script src="/js/featherlight.min.js?1772467623"></script>
+    <script src="/js/highlight.pack.js?1772467623"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1772463719"></script>
-    <script src="/js/learn.js?1772463719"></script>
-    <script src="/js/hugo-learn.js?1772463719"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1772467623"></script>
+    <script src="/js/learn.js?1772467623"></script>
+    <script src="/js/hugo-learn.js?1772467623"></script>
     
         
-            <script src="/mermaid/mermaid.js?1772463719"></script>
+            <script src="/mermaid/mermaid.js?1772467623"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

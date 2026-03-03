@@ -22,5 +22,12 @@
       <guid>http://localhost:1313/01-part1/020-database-preload/</guid>
       <description>&lt;p&gt;Your account has been pre-configured with a new Oracle Autonomous AI Database. That database does not currently have any data or tables in it. In this section we will use Oracle&amp;rsquo;s Autonomous AI Database&amp;rsquo;s built in tools to create a table in the database, and pre-load that database with a set of sdample data. This sample data will enable us to laverage the AI capeabilities of Oracle Autonomous AI database in later sessions. The sample data in the table is designed to reflect streaming data from multiple sensor data.&lt;/p&gt;</description>
     </item>
+    <item>
+      <title>Security Setup</title>
+      <link>http://localhost:1313/01-part1/030-security-setup/</link>
+      <pubDate>Wed, 14 Jan 2026 15:31:56 -0500</pubDate>
+      <guid>http://localhost:1313/01-part1/030-security-setup/</guid>
+      <description>&lt;p&gt;Your account has come with a pre-configured test client that we will use later. In order for this to be used we need to set up Resource Principal Authentication for this client to be able to work correctly. Resource Principal Authentication allows resources, in this case the Container Instance to be able to access OCI resources without having to supply user names and passwords.&lt;/p&gt;&#xA;&lt;h2 id=&#34;dynamic-group-setup&#34;&gt;Dynamic Group Setup&lt;/h2&gt;&#xA;&lt;p&gt;The first stepp in setting up resource principal authentication for this solution is to creat a dynamic group in your domain for the container instance that resides in your compartment. Name the Dynamic Group &lt;strong&gt;Container-Instance-Dynamic-Group&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>

@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.154.2">
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>Testing You Models :: Streaming Data Innovation Day</title>
+
+    
+    <link href="/css/nucleus.css?1772467623" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1772467623" rel="stylesheet">
+    <link href="/css/hybrid.css?1772467623" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1772467623" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1772467623" rel="stylesheet">
+    <link href="/css/auto-complete.css?1772467623" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1772467623" rel="stylesheet">
+    <link href="/css/theme.css?1772467623" rel="stylesheet">
+    <link href="/css/tabs.css?1772467623" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1772467623" rel="stylesheet">
+    
+    <link href="/css/theme-oracle.css?1772467623" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1772467623"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/02-part2/040-testing-your-model/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo"
+   href='/'>
+   <img src="/images/oracle-innovation-day-2.png" alt="Logo" style="height: 200px;" /> 
+</a>
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1772467623"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1772467623"></script>
+<script type="text/javascript">
+    
+        var baseurl = "http:\/\/localhost:1313\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1772467623"></script>
+
+    
+  </div>
+  
+    <section id="homelinks">
+      <ul>
+        <li>
+            <a class="padding" href='/'><i class='fas fa-home'></i> Home</a>
+        </li>
+      </ul>
+    </section>
+  
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/00-gettingstarted/" title="Getting Started" class="dd-item
+        
+        
+        
+        ">
+      <a href="/00-gettingstarted/">
+          <b>0. </b>Getting Started
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/01-part1/" title="Part 1" class="dd-item
+        
+        
+        
+        ">
+      <a href="/01-part1/">
+          <b>1. </b>Part 1
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/01-part1/010-streams/" title="Streams" class="dd-item ">
+        <a href="/01-part1/010-streams/">
+        Streams
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/01-part1/020-database-preload/" title="Database Preload" class="dd-item ">
+        <a href="/01-part1/020-database-preload/">
+        Database Preload
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/01-part1/030-security-setup/" title="Security Setup" class="dd-item ">
+        <a href="/01-part1/030-security-setup/">
+        Security Setup
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/02-part2/" title="Part 2" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/02-part2/">
+          <b>2. </b>Part 2
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/02-part2/010-database-users/" title="Database User Setup" class="dd-item ">
+        <a href="/02-part2/010-database-users/">
+        Database User Setup
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/02-part2/020-ai-training/" title="AI Model Training" class="dd-item ">
+        <a href="/02-part2/020-ai-training/">
+        AI Model Training
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/02-part2/030-deploy-models/" title="Deploy Models" class="dd-item ">
+        <a href="/02-part2/030-deploy-models/">
+        Deploy Models
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/02-part2/040-testing-your-model/" title="Testing You Models" class="dd-item active">
+        <a href="/02-part2/040-testing-your-model/">
+        Testing You Models
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'></a> > <a href='/02-part2/'>Part 2</a> > Testing You Models
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#initial-testing">Initial testing</a></li>
+    <li><a href="#oci-code-editor">OCI Code Editor</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Testing You Models
+            </h1>
+          
+
+        
+
+
+<h2 id="initial-testing">Initial testing</h2>
+<p>In the last section we deployed a model. In order to ensure that the model is working correctly we need to test the model for both functionality as well as accuracy.</p>
+<h2 id="oci-code-editor">OCI Code Editor</h2>
+<p>OCI provides a Cloud Based IDE that will allow you to edit and test code. We will use this cloud editor to write code for this lab.</p>
+<p>Launch the Code Editor from the OCI console:</p>
+<p><img src="/images/02/code-editor.png" alt="Launch Code Editor"></p>
+<p>Once the code editor lauches, create a new Python file called model-test.py.</p>
+<p>Copy the following code into your file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> requests
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Replace these with your actual values</span>
+</span></span><span style="display:flex;"><span>username <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{UserName}</span><span style="color:#e6db74">&#34;</span>     <span style="color:#75715e"># The database user that was created in the last article.</span>
+</span></span><span style="display:flex;"><span>                            <span style="color:#75715e"># this user should have OML permissions</span>
+</span></span><span style="display:flex;"><span>password <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{Password}</span><span style="color:#e6db74">&#34;</span>     <span style="color:#75715e"># The password for the database user</span>
+</span></span><span style="display:flex;"><span>omlserver <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://adb.us-ashburn-1.oraclecloud.com&#39;</span> 
+</span></span><span style="display:flex;"><span>                            <span style="color:#75715e"># The OML endpoint for your region. This is for Ashburn.</span>
+</span></span><span style="display:flex;"><span>tenant <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;{Tennancy OCID}&#34;</span>  <span style="color:#75715e"># Your tennancies unique OCID</span>
+</span></span><span style="display:flex;"><span>database <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;InnovationDay&#34;</span>
+</span></span><span style="display:flex;"><span>                            <span style="color:#75715e"># Use the name, not the display name!</span>
+</span></span><span style="display:flex;"><span>token <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>endpointName <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;myModel&#34;</span>     <span style="color:#75715e"># This is the URL snippet that you used when publighint your endpoing.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>testValue <span style="color:#f92672">=</span> <span style="color:#ae81ff">7</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Prepare the authentication URL by injecting values into the URI</span>
+</span></span><span style="display:flex;"><span>url <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>omlserver<span style="color:#e6db74">}</span><span style="color:#e6db74">/omlusers/tenants/</span><span style="color:#e6db74">{</span>tenant<span style="color:#e6db74">}</span><span style="color:#e6db74">/databases/</span><span style="color:#e6db74">{</span>database<span style="color:#e6db74">}</span><span style="color:#e6db74">/api/oauth2/v1/token&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Set up necessary headers</span>
+</span></span><span style="display:flex;"><span>headers <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;Content-Type&#34;</span>: <span style="color:#e6db74">&#34;application/json&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;Accept&#34;</span>: <span style="color:#e6db74">&#34;application/json&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Authenticate with a user name and password</span>
+</span></span><span style="display:flex;"><span>data <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;grant_type&#34;</span>: <span style="color:#e6db74">&#34;password&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;username&#34;</span>: username,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;password&#34;</span>: password
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Request an access token</span>
+</span></span><span style="display:flex;"><span>response <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>post(url, headers<span style="color:#f92672">=</span>headers, json<span style="color:#f92672">=</span>data)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#get the token from the response</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> response<span style="color:#f92672">.</span>status_code <span style="color:#f92672">==</span> <span style="color:#ae81ff">200</span>: 
+</span></span><span style="display:flex;"><span>    token <span style="color:#f92672">=</span> response<span style="color:#f92672">.</span>json()<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;accessToken&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Failed to retrieve access token&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Set up the scoring URI</span>
+</span></span><span style="display:flex;"><span>scoring_url <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>omlserver<span style="color:#e6db74">}</span><span style="color:#e6db74">/omlmod/v1/deployment/</span><span style="color:#e6db74">{</span>endpointName<span style="color:#e6db74">}</span><span style="color:#e6db74">/score&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># provide the autherntication token as a header</span>
+</span></span><span style="display:flex;"><span>scoring_headers <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;Authorization&#34;</span>: <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Bearer </span><span style="color:#e6db74">{</span>token<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;Content-Type&#34;</span>: <span style="color:#e6db74">&#34;application/json&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># provide the requested data</span>
+</span></span><span style="display:flex;"><span>scoring_data <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;inputRecords&#34;</span>: [{<span style="color:#e6db74">&#34;TEMPERATUREC&#34;</span>: testValue}]
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># call tthe model!</span>
+</span></span><span style="display:flex;"><span>score_response <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>post(scoring_url, headers<span style="color:#f92672">=</span>scoring_headers, json<span style="color:#f92672">=</span>scoring_data)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Interprate the results</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> score_response<span style="color:#f92672">.</span>status_code <span style="color:#f92672">==</span> <span style="color:#ae81ff">200</span>:
+</span></span><span style="display:flex;"><span>    result <span style="color:#f92672">=</span> score_response<span style="color:#f92672">.</span>json()
+</span></span><span style="display:flex;"><span>    print(result)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Scoring failed with status code </span><span style="color:#e6db74">{</span>score_response<span style="color:#f92672">.</span>status_code<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>    print(score_response<span style="color:#f92672">.</span>text)
+</span></span></code></pre></div><p>You will need to update some of the variabls at the top of the file.</p>
+<ul>
+<li>{UserName} - Replace this with the name of the OML user you created earlier. <strong>AIUSER</strong></li>
+<li>{Password} - Replace this with the password that you used when you created the AI User above</li>
+<li>{Tennancy OCID} - Replace this with the OCID for your tenancy that was retrieved earlier.</li>
+<li>Database <strong>InnovationDay</strong> - This will be correct if you are using the Innovation Day Terraform. If your database name is different then you may bneed to update this.</li>
+<li>EndpointName <strong>myModel</strong> - If you used the suggested values when deploying the model, then this value will be correct. If you deployed the model with a different value for URI, then you will need to change this.</li>
+</ul>
+<p>The code has a starting value of 7 for testing.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>testValue <span style="color:#f92672">=</span> <span style="color:#ae81ff">7</span>
+</span></span></code></pre></div><p>You can change this value in the code when running tests to validate different values are correctly reported.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python3 model-test.py 
+</span></span></code></pre></div><p>You can test the code directly in the cloud code editor by opening a terminal andrunning the commmand line.</p>
+<p><img src="/images/02/test-results.png" alt="Manual Testing"></p>
+
+
+<footer class="footline">
+	
+</footer>
+
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/02-part2/030-deploy-models/" title="Deploy Models"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/02-part2/010-database-users/" title="Database User Setup" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1772467623"></script>
+    <script src="/js/perfect-scrollbar.min.js?1772467623"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1772467623"></script>
+    <script src="/js/jquery.sticky.js?1772467623"></script>
+    <script src="/js/featherlight.min.js?1772467623"></script>
+    <script src="/js/highlight.pack.js?1772467623"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1772467623"></script>
+    <script src="/js/learn.js?1772467623"></script>
+    <script src="/js/hugo-learn.js?1772467623"></script>
+    
+        
+            <script src="/mermaid/mermaid.js?1772467623"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+    
+
+  </body>
+</html>
+
