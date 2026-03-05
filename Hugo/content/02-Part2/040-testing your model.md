@@ -98,3 +98,5 @@ python3 model-test.py
 You can test the code directly in the cloud code editor by opening a terminal andrunning the commmand line. 
 
 ![Manual Testing](/images/02/test-results.png)
+
+By changing the value for **testValue** at the top, you can try different values. 

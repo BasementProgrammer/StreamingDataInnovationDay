@@ -1,0 +1,74 @@
+# Copyright (c) 2020, Oracle and/or its affiliates. All rights reserved.
+# Licensed under the Universal Permissive License v 1.0 as shown at https://oss.oracle.com/licenses/upl.
+
+title: "Create a Compute instance in Oracle Cloud Infrastructure"
+stackDescription: ${Messages.solutionsHub.solutions.computeInstance.stackDescription()}
+schemaVersion: 1.1.0
+version: "20200301"
+locale: "en"
+
+variableGroups:
+  - title: Tennancy Configuration
+    description: Configuration options for networking resources.
+    visible: true
+    variables:
+    - region
+
+  - title: Network Configuration
+    description: Configuration options for networking resources.
+    visible: true
+    variables:
+    - vcn_cidr
+    - public_subnet_cidr
+
+
+
+
+
+
+
+
+
+  - title: Hidden fields
+    description: Do not show
+    visible: false
+    variables:
+    - compartment_description
+    - compartment_name
+    - enable_service_gateway
+    - vault_display_name
+    - key_display_name
+    - incoming_stream_name
+    - incoming_stream_partitions
+    - incoming_stream_retention_in_hours
+    - database_stream_name
+    - database_stream_partitions
+    - database_stream_retention_in_hours
+    - compute_count
+    - compute_model
+    - data_storage_size_in_tbs
+    - db_name
+    - db_version
+    - db_workload
+    - atp_display_name
+    - is_dedicated
+    - is_mtls_connection_required
+    - license_model
+    - is_data_guard_enabled
+    - is_local_data_guard_enabled
+    - vault_secret_ocid
+    - freeform_tags
+    - container_display_name
+    - image_urlassign_public_ip
+    - container_environment_variables
+    - container_restart_policy
+    - assign_public_ip
+    - tenancy_ocid
+    - compartment_ocid
+    - region
+    - current_user_ocid
+    - identity_domain_display_name
+    - identity_domain_description
+    - license_type
+    - availability_domain
+    - image_url

@@ -26,6 +26,7 @@ namespace DataSenderWeb.Pages
         private readonly IConfiguration _appConfig;
         private readonly IBasicAuthenticationDetailsProvider _config;
         private readonly StreamConfig _streamConfig;
+        
 
         public IndexModel(ILogger<IndexModel> logger) : base()
         {
@@ -67,6 +68,8 @@ namespace DataSenderWeb.Pages
         public IActionResult OnPostSendDataToStream (IFormCollection formCollection)
          {
             Dictionary<string, string> formParameters = ConvertFormCollectionToDictionary(formCollection);
+
+            
 
             // get the values from the form
             int numberOfClients = int.Parse(formParameters["numberOfClients"]);

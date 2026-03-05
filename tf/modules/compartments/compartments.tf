@@ -1,0 +1,9 @@
+#
+# * ----------- * Compartment Resource * ----------- *
+#
+
+resource "oci_identity_compartment" "idtestcompartment" {
+  name           = var.compartment_name
+  description    = var.compartment_description
+  compartment_id = var.compartment_ocid
+}
