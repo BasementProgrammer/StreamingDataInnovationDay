@@ -10,7 +10,7 @@ pre = "<b>0. </b>"
 
 ## Conventions
 
-Throught this session you will encounter activities. The main body of the materials will guide you through what needs to be accomplished in each section. We have left the instructions open ended so that you can learn about OCI as you go. If you get stuck allong th way there will be green hint sections and organge Walkthrough sections. The hint sections will give you directional pointers to help you along your way. If you get stuck the walkthrough sections will provide step by step instructions.
+Through this session you will encounter activities. The main body of the materials will guide you through what needs to be accomplished in each section. We have left the instructions open ended so that you can learn about OCI as you go. If you get stuck along the way there will be green hint sections and orange Walkthrough sections. The hint sections will give you directional pointers to help you along your way. If you get stuck the walkthrough sections will provide step by step instructions.
 
 {{<hint>}}
 Hint content will give you directional support if needed...
