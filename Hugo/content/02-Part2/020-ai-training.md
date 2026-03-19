@@ -5,28 +5,28 @@ title = 'AI Model Training'
 weight = 200
 +++
 
-In this section we are going to use the built in functionality for Oracle Autonomous AI Database to build and train a model that will determine if a temperature vaule represents a failure state or not.
+In this section we are going to use the built-in functionality for Oracle Autonomous AI Database to build and train a model that will determine if a temperature vaule represents a failure state or not.
 
-## AI Trainging
+## AI Training
 In the development section of the **All Database Actions** section, you can open **Oracle Machine Learning (OML)** and log in with your AI User. This will give you aceess to all of the OML tools.
  
 {{% notice note %}}
-You can not use the built in ADMIN user for OML. You should have users created specifically for OML use. 
+You can not use the built-in ADMIN user for OML. You should have users created specifically for OML use. 
 {{% /notice %}}
 
 {{<hint>}}
-**OML** Is avaialble form the **All Database Actions** drop down in the Oracle Autonomous AI Database** drop down by selecting the **Development** heading. Machine learning is one of the tabls along the left hand side.
+**OML** is avaialble from the **All Database Actions** drop down in the **Oracle Autonomous AI Database** drop down by selecting the **Development** heading. Machine Learning is one of the tables along the left hand side.
 ![Launching OML](/images/02/oml-launch.png) 
 {{</hint>}}
 
 {{<answer>}}
-* From the OCI console, open the hamburger menu.
-* Select **Orace AI Database** from the menu
+* From the OCI Console, open the hamburger menu.
+* Select **Oracle AI Database** from the menu
 * Select **Autonomous AI Database**
 * From the list of databases click on **Innovation Day ATPDB** to open your database.
 * Click the **Database Actions** drop down
 * Click on **View all database actions**
-* Along the top of the **Oracle Database Actions Launchpad** selec thte **Development** option
+* Along the top of the **Oracle Database Actions Launchpad** select the **Development** option
 * Along the left hand side, select the **Machine Learning** option
 * Log into the Oracle Machine Learning application with your AIUser that was created earlier
 {{</answer>}}
@@ -35,7 +35,7 @@ Inside of the Oracle Machine Learning application click on the **AutoML** applic
 
 Oracle AutoML works on the idea of running experiments. These experiments can be used to test various ML models on your data in order to determine which model works best in your situation. By using Oracle AutoML you can train models without having to have extensive AI/ML skills. 
 
-Create a new Experiment in the AutoML application. In your experiment, provide a name and a sescription. The experiment will use the database table ADMIN.SENSOR_DATA to predict the value of the FAULT column. For the experiment we want to select **Regression** and leave the **Case Id** blank. After saving your experiment, sewlect the option to run, with the **Faster Results** option.
+Create a new Experiment in the AutoML application. In your experiment, provide a name and a description. The experiment will use the database table ADMIN.SENSOR_DATA to predict the value of the FAULT column. For the experiment we want to select **Regression** and leave the **Case Id** blank. After saving your experiment, select the option to run, with the **Faster Results** option.
 
 {{<hint>}}
 Configure your experiment like this:
@@ -49,7 +49,7 @@ Configure your experiment like this:
 ![Create Experiment](/images/02/oml-training-1.png) 
 * Give your AutoML experiment a name and a description.
 ![Name and Description](/images/02/oml-training-2.png) 
-* Click the magnifine glass next to data source to browse the avaialble tables in your database.
+* Click the magnifying glass next to data source to browse the avaialable tables in your database.
 * Select the ADMIN schema and the table SENSOR_DATA. (These names could be different if you used a different table name on import.)
 ![Configure Experiment](/images/02/oml-training-3.png) 
 * For **Predict** select the column **FAULT**
