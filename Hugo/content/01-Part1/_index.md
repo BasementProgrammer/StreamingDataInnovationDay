@@ -10,9 +10,6 @@ pre = "<b>1. </b>"
 ## Learning about OCI
 The first part of this section will be an information session presented by your hosts. Learn about the services used, and the activities you will perform. Some of the activities that you will be completing in this sections are:
 
-
-## Activities in this section
-
 ### Streaming Data
 In this section you will connect an external source of data to OCI streams. Streams provides a durrable managed path for streaming data to travel thropugh OCI to other services.
 
