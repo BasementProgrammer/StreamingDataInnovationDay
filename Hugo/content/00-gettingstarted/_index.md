@@ -10,13 +10,13 @@ pre = "<b>0. </b>"
 
 ## Conventions
 
-Through this session you will encounter activities. The main body of the materials will guide you through what needs to be accomplished in each section. We have left the instructions open ended so that you can learn about OCI as you go. If you get stuck along the way there will be green hint sections and orange Walkthrough sections. The hint sections will give you directional pointers to help you along your way. If you get stuck the walkthrough sections will provide step by step instructions.
+Throughout this session you will encounter activities. The main body of the materials will guide you through what needs to be accomplished in each section. We have left the instructions open ended so that you can learn about OCI as you go. If you get stuck along the way there will be expandable green "Hint" sections and expandable orange "Walkthrough" sections. The "Hint" sections will give you directional pointers to help you along your way. If you get stuck the "Walkthrough" sections will provide step by step instructions.
 
 {{<hint>}}
 Hint content will give you directional support if needed...
 {{</hint>}}
 
-If you get stuck and need more support you can expand the Guided walkthrough sections to get step by step instructions.
+If you get stuck and need more support you can expand the guided "Walkthrough" sections to get step by step instructions.
 
 {{<answer>}}
 Walkthrough content will give you guided instructions.
@@ -29,34 +29,34 @@ In order to progress through this Innovation Day, you will need to run a script 
 
 {{%attachments style="grey" /%}}
 
-You should download the file and apply this via Resource manager.
+You should download the file and apply this via Resource Manager.
 
 {{<hint>}}
-Resource manager can be found in the OCI console under Developer Services. The ZIP file you downloaded can be used in resourvce manager to create a stack.
+Resource Manager can be found in the OCI Console under Developer Services. The ZIP file you downloaded can be used in Resourvce Manager to create a stack.
 {{</hint>}}
 
 
 {{<answer>}}
-* From the OCI console, open the hamburger menu.
-* Under Developer Services select Resource Manager
-* Once inside of resource manager, select the Stacks option.
+* From the OCI Console, open the hamburger Menu.
+* Under Developer Services select Resource Manager.
+* Once inside of Resource Manager, select the "Stacks" option.
 ![overview](/images/00/launch-resource-manager.gif)
 * Choose the option to create a new stack
 * Select **zip** 
-* Drag and drop the zip file containing the teraform into the upload area.
+* Drag and drop the zip file containing the Terraform into the upload area.
 ![drag and drop](/images/00/drag-zip.gif)
 * Click **Next**
-* Att he configure variables page accept all the defaults and select **Next**
+* At the configure variables page accept all the defaults and select **Next**
 * Click Create
-* Once the stack has been created select the **Plan** option to allow Terraform to plan the stack.
+* Once the stack has been created select the **Plan** option to allow Terraform to Plan the stack.
 ![Plan](/images/00/stack-plan.png)
-* Click **plan** from the slide out on the right to confirm the plan action.
+* Click **Plan** from the slide out on the right to confirm the Plan action.
 ![Plan](/images/00/stack-apply.png)
-* Click Apply to apply the stack to your account.
+* Click **Apply** to apply the stack to your account.
 {{</answer>}}
 
 {{% notice note %}}
-If your initial **Apply** fails, you may need to try the **plan** and **apply** again.
+If your initial **Apply** fails, you may need to try the **Plan** and **Apply** again.
 {{% /notice %}}
 
 ## Retrieve configuration Details
@@ -67,7 +67,7 @@ Once your stack has been created you will need to retrieve some configuration de
 * Database Admin Password
 * Compartment ID
 
-From the Resource Manager page click on the Stack to open it.
+From the Resource Manager page click on the stack to open it.
 ![Open Stack](/images/00/password-1.png)
 
 From the Resources menu, click the **View State** option.
@@ -80,5 +80,5 @@ Find the values here:
 Every password is unique and randomly generated at the point of creation. No two passwords will be the same and your password will be different if you run this workshop multiple times.
 {{% /notice %}}
 
-Additionally you will need to note down your Tennancy OCID. You can find that tin the variables section of the stack.
+Additionally, you will need to note down your Tennancy OCID. You can find that in the variables section of the stack.
 ![Open Stack](/images/00/tenancy-ocid.png)
